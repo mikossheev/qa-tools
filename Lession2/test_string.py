@@ -1,25 +1,29 @@
 """Here are the tests with string"""
-TEST_STRING = "Some text here"
 
 
-def test_all_parts(string_prepare, before_type, before_all):
+def test_string_length_and_space(string_prepare, random_text_length):
+    """Test checks the length of string, depending on random text length,
+    and that string does not start with a space"""
+    assert len(string_prepare) == 22 + random_text_length
+    assert not string_prepare.startswith(" ")
+
+
+def test_all_parts(string_prepare, random_text_length):
     """This test checks if the string starts with known start and end parts,
     and whether random part consists of letters in upper case"""
-    test_string = string_prepare
+
     start_of_the_string = "Some random text "
     end_of_the_string = " here"
 
-    assert test_string.startswith(start_of_the_string)
-    test_string = test_string.lstrip(start_of_the_string)
+    assert string_prepare.startswith(start_of_the_string)
+    string_prepare = string_prepare.lstrip(start_of_the_string)
 
-    assert test_string.endswith(end_of_the_string)
-    test_string = test_string.rstrip(end_of_the_string)
+    assert string_prepare.endswith(end_of_the_string)
+    string_prepare = string_prepare.rstrip(end_of_the_string)
 
-    assert test_string.isupper()
-    assert test_string.isalpha()
+    assert string_prepare.isupper()
+    assert string_prepare.isalpha()
+
+    assert len(string_prepare) == random_text_length
 
 
-def test_string_length_and_space(string_prepare):
-    """Does the string, prepared in the fixture consist of 26 characters and starts not with space?"""
-    assert len(string_prepare) == 26
-    assert not string_prepare.startswith(" ")

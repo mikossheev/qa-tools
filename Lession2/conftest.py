@@ -19,11 +19,14 @@ def string_prepare():
     yield string_for_current_test
 
 
+@pytest.fixture(scope="module")
+def random_text_length():
+    print('\nStart execution of string tests with ' + str(NUMBER_OF_RANDOM_SYMBOLS) + " random symbols")
+    yield NUMBER_OF_RANDOM_SYMBOLS
+
+
 @pytest.fixture(scope="session")
 def before_all():
     print('\nStart execution of all tests')
 
 
-@pytest.fixture(scope="module")
-def before_type():
-    print('\nStart execution of one type of tests')
