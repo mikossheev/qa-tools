@@ -5,7 +5,7 @@ import string
 import pytest
 
 NUMBER_OF_RANDOM_SYMBOLS = 4
-TEST_STRING_PART_START = "SOME random text"
+TEST_STRING_PART_START = "Some random text"
 TEST_STRING_PART_END = " here"
 
 
