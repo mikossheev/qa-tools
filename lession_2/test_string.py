@@ -8,7 +8,7 @@ def test_string_length_and_space(string_prepare, random_number):
     assert not string_prepare.startswith(" ")
 
 
-def test_all_parts(string_prepare, random_number):
+def test_string_all_parts(string_prepare, random_number):
     """This test checks if the string starts with known start and end parts,
     and whether random part consists of letters in upper case"""
 
@@ -25,5 +25,3 @@ def test_all_parts(string_prepare, random_number):
     assert string_prepare.isalpha()
 
     assert len(string_prepare) == random_number
-
-

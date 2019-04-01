@@ -10,5 +10,7 @@ def test_list_length_and_space(list_prepare, random_number, session_min_random_n
 
 
 def test_list_sort(list_prepare, random_number):
+    """Test is checking whether first element of the list is shorter
+    or equal than last after list sorting"""
     list_prepare.sort(key=len)
     assert len(list_prepare[0]) <= len(list_prepare[int(random_number)-1])
